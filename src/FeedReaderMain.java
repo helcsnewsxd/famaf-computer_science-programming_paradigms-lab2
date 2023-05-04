@@ -1,4 +1,8 @@
-
+import httpRequest.httpRequester;
+import parser.RssParser;
+import parser.GeneralParser;
+import feed.Feed;
+import subscription.*;
 public class FeedReaderMain {
 
 	private static void printHelp(){
@@ -16,6 +20,7 @@ public class FeedReaderMain {
 			Llamar al constructor de Feed
 			LLamar al prettyPrint del Feed para ver los articulos del feed en forma legible y amigable para el usuario
 			*/
+
 			
 		} else if (args.length == 1){
 			
