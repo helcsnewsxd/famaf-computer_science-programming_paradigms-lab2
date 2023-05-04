@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/*Esta clse abstrae el contenido de una sola suscripcion que ocurre en lista de suscripciones que figuran en el archivo de suscrpcion(json) */
+/* Esta clase abstrae el contenido de una sola suscripcion que ocurre en lista de suscripciones que figuran en el archivo de suscripcion (json) */
 public class SingleSubscription {
 	
 	private String url;
@@ -12,11 +12,9 @@ public class SingleSubscription {
 	private String urlType;
 	
 	
-	public SingleSubscription(String url, List<String> ulrParams, String urlType) {
+	public SingleSubscription() {
 		super();
-		this.url = url;
-		this.ulrParams = new ArrayList<String>() ;
-		this.urlType = urlType;
+		this.ulrParams = new ArrayList<String>();
 	}
 
 	public String getUrl() {
@@ -53,21 +51,7 @@ public class SingleSubscription {
 		System.out.println(this.toString());
 	}
 	
-	
 	public String getFeedToRequest(int i){
 		return this.getUrl().replace("%s",this.getUlrParams(i));
 	}
-	
-	public static void main(String[] args) {
-		System.out.println("SingleSubscriptionClass");
-		SingleSubscription s = new SingleSubscription("https://rss.nytimes.com/services/xml/rss/nyt/%s.xml", null, "rss");
-		s.setUlrParams("Business");
-		s.setUlrParams("Technology");
-		System.out.println(s.getFeedToRequest(0));
-		s.prettyPrint();
-	}
-	
-	
-	
-	
 }
