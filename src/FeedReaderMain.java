@@ -40,12 +40,16 @@ public class FeedReaderMain {
 			for (int i = 0; i < subscription.getSubscriptionAmount(); i++) {
 				SingleSubscription singleSub = subscription.getSingleSubscription(i);
 				for (int j = 0; j < singleSub.getUlrParamsSize(); j++) {
-					String rssContent = httpRequester.getFeedRss(singleSub.getUrlForParam(j));
 					try {
+						String rssContent = httpRequester.getFeedRss(singleSub.getUrlForParam(j));
 						Feed feed = rssParser.parse(rssContent);
 						feed.prettyPrint();
+					} catch(MalformedURLException e) {
+						System.out.println("Malformed URL exception en subscripcion " + singleSub.getUrlForParam(j));
+					} catch(IOException e) {
+						System.out.println("IO exception en subscripcion " + singleSub.getUrlForParam(j));
 					} catch(SAXParseException e) {
-						System.out.println("Parse exception en subscripcion " + i + " con parametro " + singleSub.getUlrParams(j));
+						System.out.println("Parse exception en subscripcion " + singleSub.getUrlForParam(j));
 					}
 				}
 			}
