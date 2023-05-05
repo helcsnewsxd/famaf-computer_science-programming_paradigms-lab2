@@ -1,4 +1,5 @@
 package parser;
+
 import feed.Feed;
 import feed.Article;
 
@@ -24,7 +25,7 @@ import java.util.Locale;
 
 public class RssParser extends GeneralParser {
     public Feed parse(String content) throws ParserConfigurationException, IOException, SAXException, ParseException {
-        // Parsear xml 
+        // Parsear xml
         Feed feed = new Feed("Unnamed Feed");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -35,9 +36,9 @@ public class RssParser extends GeneralParser {
         NodeList items = doc.getElementsByTagName("item");
 
         Node channel = doc.getElementsByTagName("channel").item(0);
-        if(channel != null) {
+        if (channel != null) {
             Node siteName = doc.getElementsByTagName("title").item(0);
-            if(siteName != null && siteName.getParentNode() == channel) {
+            if (siteName != null && siteName.getParentNode() == channel) {
                 feed.setSiteName(siteName.getTextContent());
 
             }

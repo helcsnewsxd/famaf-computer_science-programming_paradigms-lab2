@@ -15,13 +15,13 @@ import java.net.URL;
 public class httpRequester {
 	public static String getFeedRss(String urlFeed) throws MalformedURLException, IOException {
 		StringBuffer feedRssXml = new StringBuffer();
-		
+
 		// Creamos URL de solicitud y abrimos conexión HTTP
 		URL url = new URL(urlFeed);
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestMethod("GET");
 		con.setInstanceFollowRedirects(true);
-				
+
 		// Leer status code y conseguir contenido
 		int status = con.getResponseCode();
 
@@ -37,7 +37,7 @@ public class httpRequester {
 		while ((inputLine = streamReader.readLine()) != null) {
 			feedRssXml.append(inputLine);
 		}
-		
+
 		return feedRssXml.toString();
 	}
 
