@@ -39,7 +39,7 @@ public class RssParser {
             }
         }
 
-        for (int i = 0; i < items.getLength(); ++i) {
+        for (int i = 0, szi = items.getLength(); i < szi; ++i) {
             Element item = (Element) items.item(i);
             String title = item.getElementsByTagName("title").item(0).getTextContent();
             String pubDateStr = item.getElementsByTagName("pubDate").item(0).getTextContent();
