@@ -6,11 +6,13 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.json.JSONException;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import feed.Feed;
 import httpRequest.httpRequester;
 import parser.RssParser;
 import parser.SubscriptionParser;
+import subscription.SingleSubscription;
 import subscription.Subscription;
 
 public class FeedReaderMain {
@@ -33,14 +35,19 @@ public class FeedReaderMain {
 			SubscriptionParser parser = new SubscriptionParser();
 			Subscription subscription = parser.parse("config/subscriptions.json");
 
-			//System.out.println(subscription.getSingleSubscription(0).getUrl());
-
 			RssParser rssParser = new RssParser();
 
-			for (int i = 0; i < subscription.getSubscriptionsList().size(); i++) {
-				String rssContent = httpRequester.getFeedRss(subscription.getSingleSubscription(i).getUrl());
-				Feed feed = rssParser.parse(subscription.getSingleSubscription(i).getUrl(), rssContent);
-				feed.prettyPrint();
+			for (int i = 0; i < subscription.getSubscriptionAmount(); i++) {
+				SingleSubscription singleSub = subscription.getSingleSubscription(i);
+				for (int j = 0; j < singleSub.getUlrParamsSize(); j++) {
+					String rssContent = httpRequester.getFeedRss(singleSub.getUrlForParam(j));
+					try {
+						Feed feed = rssParser.parse(rssContent);
+						feed.prettyPrint();
+					} catch(SAXParseException e) {
+						System.out.println("Parse exception en subscripcion " + i + " con parametro " + singleSub.getUlrParams(j));
+					}
+				}
 			}
 			
 		} else if (args.length == 1){

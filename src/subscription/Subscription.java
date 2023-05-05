@@ -23,6 +23,10 @@ public class Subscription {
 	public void addSingleSubscription(SingleSubscription s) {
 		this.suscriptionsList.add(s);
 	}
+
+	public int getSubscriptionAmount() {
+		return this.suscriptionsList.size();
+	}
 	
 	public SingleSubscription getSingleSubscription(int i){
 		return this.suscriptionsList.get(i);

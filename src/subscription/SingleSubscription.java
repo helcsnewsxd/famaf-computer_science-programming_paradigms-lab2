@@ -38,6 +38,10 @@ public class SingleSubscription {
 	public String getUrlType() {
 		return urlType;
 	}
+
+	public String getUrlForParam(int paramIndex) {
+		return String.format(this.url, this.ulrParams.get(paramIndex));
+	}
 	public void setUrlType(String urlType) {
 		this.urlType = urlType;
 	} 
