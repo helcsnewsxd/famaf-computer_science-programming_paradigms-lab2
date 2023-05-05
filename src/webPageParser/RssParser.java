@@ -1,4 +1,4 @@
-package parser;
+package webPageParser;
 
 import feed.Feed;
 import feed.Article;
@@ -18,20 +18,15 @@ import java.io.StringReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-/* Esta clase implementa el parser de feed de tipo rss (xml)
- * https://www.tutorialspoint.com/java_xml/java_dom_parse_document.htm 
- * */
+
 import java.util.Locale;
 
-public class RssParser extends GeneralParser {
+public class RssParser {
     public Feed parse(String content) throws ParserConfigurationException, IOException, SAXException, ParseException {
-        // Parsear xml
         Feed feed = new Feed("Unnamed Feed");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(content)));
-
-        // Conseguir los <item> dentro del feed rss y traducirlos a Article(s)
 
         NodeList items = doc.getElementsByTagName("item");
 
