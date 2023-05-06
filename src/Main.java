@@ -5,14 +5,19 @@ import java.text.ParseException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 import java.util.List;
-
+import java.util.Map;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import subscriptions.SimpleSubscription;
 import subscriptions.SubscriptionParser;
 import subscriptions.Subscriptions;
 import webPageParser.GeneralParser;
 import httpRequest.HTTPRequester;
+import namedEntity.heuristic.Heuristic;
+import namedEntity.heuristic.QuickHeuristic;
+import namedEntity.heuristic.RandomHeuristic;
+import feed.Article;
 import feed.Feed;
 
 public class Main {
@@ -70,6 +75,53 @@ public class Main {
                             feed.prettyPrint();
                         } else {
                             // COMPLETE HEURISTIC CASE
+                            // Get feed parsing the text
+                            GeneralParser generalParser = new GeneralParser();
+                            Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
+
+                            if (feed == null) {
+                                subscriptionErrors.add(
+                                        "Parse error in "
+                                                + simpleSubscription.getFormattedUrlForParameter(j));
+                                continue;
+                            }
+
+                            // heuristic in use
+                            Heuristic heurgit = new QuickHeuristic();
+
+                            // list of named entities
+                            List<String> namedEntities = new ArrayList<>();
+
+                            // gets the articles' texts
+                            StringBuilder sb = new StringBuilder();
+                            for (Article article : feed.getArticleList()) {
+                                sb.append(article.getText()).append(" ");
+                            }
+                            String allText = sb.toString();
+                            
+                            // takes out the words from all texts and checks if they're entities
+                            String[] words = allText.split("\\s+");
+                            for (String word : words) {
+                                if (heurgit.isEntity(word)) {
+                                    namedEntities.add(word);
+                                }
+                            }
+                        
+                            // counts the entities
+                            Map<String, Integer> entityCount = new HashMap<>();
+
+                            for (String entity : namedEntities) {
+                                if (entityCount.containsKey(entity)) {
+                                    entityCount.put(entity, entityCount.get(entity) + 1);
+                                } else {
+                                    entityCount.put(entity, 1);
+                                }
+                            }
+                            
+                            // prints info
+                            for (Map.Entry<String, Integer> entry : entityCount.entrySet()) {
+                                System.out.println(entry.getKey() + " [" + heurgit.getCategory(entry.getKey()) + "]" + ": " + entry.getValue());
+                            }
                         }
 
                     } catch (MalformedURLException e) {
