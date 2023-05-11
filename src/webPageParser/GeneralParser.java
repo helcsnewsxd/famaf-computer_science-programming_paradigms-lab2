@@ -9,7 +9,7 @@ import org.xml.sax.SAXException;
 
 public class GeneralParser {
     public Feed parse(String content, String urlType)
-            throws ParserConfigurationException, IOException, SAXException, ParseException {
+            throws ParserConfigurationException, IOException, SAXException, ParseException, EmptyFeedException {
         if (urlType.equals("rss")) {
             RssParser rssParser = new RssParser();
             return rssParser.parse(content);

@@ -18,10 +18,21 @@ public class HTTPRequester {
     }
 
     private String getFeedRss(String urlFeed) throws MalformedURLException, IOException {
+        String feedRss = getResponse(urlFeed);
+        return feedRss;
+    }
+
+    // TO COMPLETE
+    private static String getFeedReedit(String urlFeed) throws MalformedURLException, IOException{
+        String feedReeditJson = getResponse(urlFeed);
+        return feedReeditJson;
+    }
+
+    private static String getResponse(String url) throws MalformedURLException, IOException {
         StringBuffer feedRssXml = new StringBuffer();
 
-        URL url = new URL(urlFeed);
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        URL urlObj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) urlObj.openConnection();
         con.setRequestMethod("GET");
         con.setInstanceFollowRedirects(true);
 
@@ -41,11 +52,6 @@ public class HTTPRequester {
         }
 
         return feedRssXml.toString();
-    }
 
-    // TO COMPLETE
-    private static String getFeedReedit(String urlFeed) {
-        String feedReeditJson = null;
-        return feedReeditJson;
     }
 }
