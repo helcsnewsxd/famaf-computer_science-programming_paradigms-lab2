@@ -2,21 +2,25 @@ package namedEntity.heuristic;
 
 import java.util.Map;
 
+import namedEntity.NameSport;
+import namedEntity.NamedEntity;
+
 public abstract class Heuristic {
 
-    private static Map<String, String> categoryMap = Map.of(
-            "Microsft", "Company",
-            "Apple", "Company",
-            "Google", "Company",
-            "Musk", "Person",
-            "Biden", "Person",
-            "Trump", "Person",
-            "Messi", "Person",
-            "Federer", "Person",
-            "USA", "Country",
-            "Russia", "Country");
+    private static Map<String, Class<? extends NamedEntity>> categoryMap = Map.of(
+            "Dybala", NameSport.class
+            // "Apple", "Company",
+            // "Google", "Company",
+            // "Musk", new PersonTema(),
+            // "Biden", new PersonPolitics(),
+            // "Trump", "Person",
+            // "Messi", "Person",
+            // "Federer", "Person",
+            // "USA", "Country",
+            // "Russia", "Country"
+            );
 
-    public String getCategory(String entity) {
+    public Class<? extends NamedEntity> getCategory(String entity) {
         return categoryMap.get(entity);
     }
 

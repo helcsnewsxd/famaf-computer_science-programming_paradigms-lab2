@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.text.ParseException;
 import javax.xml.parsers.ParserConfigurationException;
@@ -27,7 +28,7 @@ public class Main {
         System.out.println("Please, call this program in correct way: FeedReader [-ne]");
     }
 
-    public static void main(String[] args) throws FileNotFoundException, EmptyFeedException {
+    public static void main(String[] args) throws FileNotFoundException, EmptyFeedException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
         System.out.println("************* FeedReader version 1.0 *************");
         if (args.length > 1 || (args.length == 1 && !args[0].equals("-ne")))
             printHelp();
@@ -93,8 +94,12 @@ public class Main {
                             // computes the named entities for each article, saving all ne in their respective lists
                             for (Article article : feed.getArticleList()) {
                                 article.computeNamedEntities(heur);
-                                for (NamedEntity namedEntity : article.getNamedEntitiesList()) {
+                                for (NamedEntity namedEntity : article.getNamedEntityList()) {
                                     System.out.println(namedEntity.getName());
+                                    System.out.println(namedEntity.getFrequency());
+                                    System.out.println(namedEntity.getType());
+                                    System.out.println(namedEntity.themeToString());
+                                    System.out.println("-----------");
                                 }
                             }
                         }

@@ -1,5 +1,7 @@
 package feed;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,7 +15,11 @@ public class Article {
     private Date publicationDate;
     private String link;
 
-    private List<NamedEntity> namedEntityList = new ArrayList<NamedEntity>();
+    private List<NamedEntity> namedEntityList = new ArrayList<>();
+
+    public List<NamedEntity> getNamedEntityList () {
+        return this.namedEntityList;
+    }
 
     public Article(String title, String text, Date publicationDate, String link) {
         super();
@@ -70,7 +76,7 @@ public class Article {
         return null;
     }
 
-    public void computeNamedEntities(Heuristic h) {
+    public void computeNamedEntities(Heuristic h) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
         String text = this.getTitle() + " " + this.getText();
 
         String charsToRemove = ".,;:()'!?\n";
@@ -78,11 +84,20 @@ public class Article {
             text = text.replace(String.valueOf(c), "");
         }
 
+
         for (String s : text.split(" ")) {
             if (h.isEntity(s)) {
                 NamedEntity ne = this.getNamedEntity(s);
                 if (ne == null) {
-                    this.namedEntityList.add(new NamedEntity(s, null, 1));
+                    Class<? extends NamedEntity> categoryClass = h.getCategory("s");
+                    // Si no hay clasificacion definida para esta named entity, su tipo sera 
+                    // generico.
+                    if(categoryClass == null) {
+                        categoryClass = NamedEntity.class;
+                    }
+                    ne = categoryClass.getDeclaredConstructor().newInstance();
+                    ne.setFrequency(1);
+                    this.namedEntityList.add(ne);
                 } else {
                     ne.incFrequency();
                 }

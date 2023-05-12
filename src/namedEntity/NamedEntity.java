@@ -1,17 +1,30 @@
 package namedEntity;
 
+import namedEntity.theme.Theme;
+
 /*Esta clase modela la nocion de entidad nombrada*/
 
-public class NamedEntity {
+public class NamedEntity implements Theme {
     String name;
     String category;
     int frequency;
+
+    public NamedEntity() {
+
+    }
 
     public NamedEntity(String name, String category, int frequency) {
         super();
         this.name = name;
         this.category = category;
         this.frequency = frequency;
+    }
+
+    public String getType() {
+        return "Entidad Nombrada";
+    }
+    public String themeToString() {
+        return "Tema";
     }
 
     public String getName() {
