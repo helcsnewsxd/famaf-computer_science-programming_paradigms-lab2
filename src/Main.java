@@ -59,34 +59,22 @@ public class Main {
                             continue;
                         }
 
-                        if (!normalPrint) {
-                            // Get feed parsing the text
-                            GeneralParser generalParser = new GeneralParser();
-                            Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
+                        // Get feed parsing the text
+                        GeneralParser generalParser = new GeneralParser();
+                        Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
 
-                            if (feed == null) {
-                                subscriptionErrors.add(
-                                        "Parse error in "
-                                                + simpleSubscription.getFormattedUrlForParameter(j));
-                                continue;
-                            }
+                        if (feed == null) {
+                            subscriptionErrors.add(
+                                    "Parse error in "
+                                            + simpleSubscription.getFormattedUrlForParameter(j));
+                            continue;
+                        }
 
+                        if (normalPrint) {
                             // Print feed to user
 
                             feed.prettyPrint();
                         } else {
-                            // COMPLETE HEURISTIC CASE
-                            // Get feed parsing the text
-                            GeneralParser generalParser = new GeneralParser();
-                            Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
-
-                            if (feed == null) {
-                                subscriptionErrors.add(
-                                        "Parse error in "
-                                                + simpleSubscription.getFormattedUrlForParameter(j));
-                                continue;
-                            }
-
                             // heuristic in use
                             Heuristic heur = new RandomHeuristic();
 
