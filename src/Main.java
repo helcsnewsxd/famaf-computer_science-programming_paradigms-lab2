@@ -14,6 +14,8 @@ import subscriptions.Subscriptions;
 import webPageParser.EmptyFeedException;
 import webPageParser.GeneralParser;
 import httpRequest.HTTPRequester;
+import httpRequest.InvalidUrlTypeToFeedException;
+import httpRequest.HttpRequestException;
 import namedEntity.NamedEntity;
 import namedEntity.heuristic.Heuristic;
 import namedEntity.heuristic.QuickHeuristic;
@@ -52,13 +54,6 @@ public class Main {
                         String feedText = httpRequester.getFeed(simpleSubscription.getFormattedUrlForParameter(j),
                                 simpleSubscription.getUrlType());
 
-                        if (feedText == null) {
-                            subscriptionErrors.add(
-                                    "Parse error in "
-                                            + simpleSubscription.getFormattedUrlForParameter(j));
-                            continue;
-                        }
-
                         // Get feed parsing the text
                         GeneralParser generalParser = new GeneralParser();
                         Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
@@ -85,6 +80,14 @@ public class Main {
                             }
                         }
 
+                    } catch (InvalidUrlTypeToFeedException e) {
+                        subscriptionErrors.add(
+                                    "Invalid URL Type to get feed in "
+                                            + simpleSubscription.getFormattedUrlForParameter(j));
+                    } catch (HttpRequestException e) {
+                        subscriptionErrors.add(
+                                    "Error in connection: " + e.getMessage() + " "
+                                            + simpleSubscription.getFormattedUrlForParameter(j));
                     } catch (EmptyFeedException e) {
                         subscriptionErrors.add(
                                     "Empty Feed in "

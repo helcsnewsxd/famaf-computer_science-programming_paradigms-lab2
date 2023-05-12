@@ -8,13 +8,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class HTTPRequester {
-    public String getFeed(String urlFeed, String urlType) throws MalformedURLException, IOException, HttpRequestException {
+    public String getFeed(String urlFeed, String urlType) throws InvalidUrlTypeToFeedException, MalformedURLException, IOException, HttpRequestException {
         if (urlType.equals("rss"))
             return getFeedRss(urlFeed);
         else if (urlType.equals("reddit"))
             return getFeedReedit(urlFeed);
         else
-            return null;
+            throw new InvalidUrlTypeToFeedException("invalid urlType");
     }
 
     private String getFeedRss(String urlFeed) throws MalformedURLException, IOException, HttpRequestException {
@@ -22,7 +22,6 @@ public class HTTPRequester {
         return feedRss;
     }
 
-    // TO COMPLETE
     private static String getFeedReedit(String urlFeed) throws MalformedURLException, IOException, HttpRequestException{
         String feedReeditJson = getResponse(urlFeed);
         return feedReeditJson;
@@ -54,7 +53,7 @@ public class HTTPRequester {
         }
 
         if (reqError) {
-            throw new HttpRequestException(streamReader.toString()); 
+            throw new HttpRequestException(feedRssXml.toString()); 
         }
 
         return feedRssXml.toString();
