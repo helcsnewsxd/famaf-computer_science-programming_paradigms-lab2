@@ -28,7 +28,7 @@ public class Main {
         System.out.println("Please, call this program in correct way: FeedReader [-ne]");
     }
 
-    public static void main(String[] args) throws FileNotFoundException, EmptyFeedException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+    public static void main(String[] args) throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
         System.out.println("************* FeedReader version 1.0 *************");
         if (args.length > 1 || (args.length == 1 && !args[0].equals("-ne")))
             printHelp();
@@ -63,13 +63,6 @@ public class Main {
                         GeneralParser generalParser = new GeneralParser();
                         Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
 
-                        if (feed == null) {
-                            subscriptionErrors.add(
-                                    "Parse error in "
-                                            + simpleSubscription.getFormattedUrlForParameter(j));
-                            continue;
-                        }
-
                         if (normalPrint) {
                             // Print feed to user
 
@@ -92,6 +85,10 @@ public class Main {
                             }
                         }
 
+                    } catch (EmptyFeedException e) {
+                        subscriptionErrors.add(
+                                    "Empty Feed in "
+                                            + simpleSubscription.getFormattedUrlForParameter(j));
                     } catch (MalformedURLException e) {
                         subscriptionErrors.add(
                                 "Malformed URL exception en subscripcion "
