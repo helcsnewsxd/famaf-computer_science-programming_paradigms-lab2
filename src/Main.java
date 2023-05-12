@@ -119,7 +119,7 @@ public class Main {
             if (subscriptionErrors.size() != 0) {
                 System.out.println("==================================================");
                 System.out.println(
-                        "Hubo un total de " + subscriptionErrors.size() + " errores en la creación de los Feeds:");
+                        "There was a total of " + subscriptionErrors.size() + " errors in the creation of the Feeds:");
                 for (String s : subscriptionErrors) {
                     System.out.print("  - ");
                     System.out.println(s);
