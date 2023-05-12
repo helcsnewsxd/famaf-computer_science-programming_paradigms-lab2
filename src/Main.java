@@ -5,15 +5,15 @@ import java.text.ParseException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import subscriptions.SimpleSubscription;
 import subscriptions.SubscriptionParser;
 import subscriptions.Subscriptions;
+import webPageParser.EmptyFeedException;
 import webPageParser.GeneralParser;
 import httpRequest.HTTPRequester;
+import namedEntity.NamedEntity;
 import namedEntity.heuristic.Heuristic;
 import namedEntity.heuristic.QuickHeuristic;
 import namedEntity.heuristic.RandomHeuristic;
@@ -27,7 +27,7 @@ public class Main {
         System.out.println("Please, call this program in correct way: FeedReader [-ne]");
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, EmptyFeedException {
         System.out.println("************* FeedReader version 1.0 *************");
         if (args.length > 1 || (args.length == 1 && !args[0].equals("-ne")))
             printHelp();
@@ -58,7 +58,7 @@ public class Main {
                             continue;
                         }
 
-                        if (normalPrint) {
+                        if (!normalPrint) {
                             // Get feed parsing the text
                             GeneralParser generalParser = new GeneralParser();
                             Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
@@ -87,40 +87,15 @@ public class Main {
                             }
 
                             // heuristic in use
-                            Heuristic heurgit = new QuickHeuristic();
+                            Heuristic heur = new RandomHeuristic();
 
-                            // list of named entities
-                            List<String> namedEntities = new ArrayList<>();
 
-                            // gets the articles' texts
-                            StringBuilder sb = new StringBuilder();
+                            // computes the named entities for each article, saving all ne in their respective lists
                             for (Article article : feed.getArticleList()) {
-                                sb.append(article.getText()).append(" ");
-                            }
-                            String allText = sb.toString();
-                            
-                            // takes out the words from all texts and checks if they're entities
-                            String[] words = allText.split("\\s+");
-                            for (String word : words) {
-                                if (heurgit.isEntity(word)) {
-                                    namedEntities.add(word);
+                                article.computeNamedEntities(heur);
+                                for (NamedEntity namedEntity : article.getNamedEntitiesList()) {
+                                    System.out.println(namedEntity.getName());
                                 }
-                            }
-                        
-                            // counts the entities
-                            Map<String, Integer> entityCount = new HashMap<>();
-
-                            for (String entity : namedEntities) {
-                                if (entityCount.containsKey(entity)) {
-                                    entityCount.put(entity, entityCount.get(entity) + 1);
-                                } else {
-                                    entityCount.put(entity, 1);
-                                }
-                            }
-                            
-                            // prints info
-                            for (Map.Entry<String, Integer> entry : entityCount.entrySet()) {
-                                System.out.println(entry.getKey() + " [" + heurgit.getCategory(entry.getKey()) + "]" + ": " + entry.getValue());
                             }
                         }
 
