@@ -1,6 +1,5 @@
 package feed;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -97,6 +96,7 @@ public class Article {
                     }
                     ne = categoryClass.getDeclaredConstructor().newInstance();
                     ne.setFrequency(1);
+                    ne.setName(s);
                     this.namedEntityList.add(ne);
                 } else {
                     ne.incFrequency();
