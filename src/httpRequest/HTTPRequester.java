@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class HTTPRequester {
-    public String getFeed(String urlFeed, String urlType) throws MalformedURLException, IOException {
+    public String getFeed(String urlFeed, String urlType) throws MalformedURLException, IOException, HttpRequestException {
         if (urlType.equals("rss"))
             return getFeedRss(urlFeed);
         else if (urlType.equals("reddit"))
@@ -17,18 +17,18 @@ public class HTTPRequester {
             return null;
     }
 
-    private String getFeedRss(String urlFeed) throws MalformedURLException, IOException {
+    private String getFeedRss(String urlFeed) throws MalformedURLException, IOException, HttpRequestException {
         String feedRss = getResponse(urlFeed);
         return feedRss;
     }
 
     // TO COMPLETE
-    private static String getFeedReedit(String urlFeed) throws MalformedURLException, IOException{
+    private static String getFeedReedit(String urlFeed) throws MalformedURLException, IOException, HttpRequestException{
         String feedReeditJson = getResponse(urlFeed);
         return feedReeditJson;
     }
 
-    private static String getResponse(String url) throws MalformedURLException, IOException {
+    private static String getResponse(String url) throws MalformedURLException, IOException, HttpRequestException {
         StringBuffer feedRssXml = new StringBuffer();
 
         URL urlObj = new URL(url);
@@ -40,7 +40,9 @@ public class HTTPRequester {
 
         BufferedReader streamReader;
 
-        if (status > 299) {
+        Boolean reqError;
+
+        if ((reqError = status > 299)) {
             streamReader = new BufferedReader(new InputStreamReader(con.getErrorStream()));
         } else {
             streamReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -49,6 +51,10 @@ public class HTTPRequester {
 
         while ((inputLine = streamReader.readLine()) != null) {
             feedRssXml.append(inputLine);
+        }
+
+        if (reqError) {
+            throw new HttpRequestException(streamReader.toString()); 
         }
 
         return feedRssXml.toString();
