@@ -11,7 +11,8 @@ public class PersonBasket extends Person implements Basket {
 
     public PersonBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Person");
+        setTheme("Basket");
     }
 
 }

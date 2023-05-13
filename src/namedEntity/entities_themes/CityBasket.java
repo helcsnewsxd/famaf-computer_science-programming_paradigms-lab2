@@ -11,7 +11,8 @@ public class CityBasket extends City implements Basket {
 
     public CityBasket() {
         super();
-        setCategory("Basket");
+        setCategory("City");
+        setTheme("Basket");
     }
 
 }

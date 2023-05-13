@@ -11,7 +11,8 @@ public class ProductFormula1 extends Product implements Formula1 {
 
     public ProductFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Product");
+        setTheme("Formula1");
     }
 
 }

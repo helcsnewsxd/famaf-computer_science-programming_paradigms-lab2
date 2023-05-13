@@ -11,7 +11,8 @@ public class PlaceMusic extends Place implements Music {
 
     public PlaceMusic() {
         super();
-        setCategory("Music");
+        setCategory("Place");
+        setTheme("Music");
     }
 
 }

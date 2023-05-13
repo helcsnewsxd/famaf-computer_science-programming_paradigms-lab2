@@ -11,7 +11,8 @@ public class PlaceBasket extends Place implements Basket {
 
     public PlaceBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Place");
+        setTheme("Basket");
     }
 
 }

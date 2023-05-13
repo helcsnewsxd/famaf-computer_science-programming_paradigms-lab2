@@ -11,7 +11,8 @@ public class EventCinema extends Event implements Cinema {
 
     public EventCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Event");
+        setTheme("Cinema");
     }
 
 }

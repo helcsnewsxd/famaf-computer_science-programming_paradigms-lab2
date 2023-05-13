@@ -11,7 +11,8 @@ public class AddressCinema extends Address implements Cinema {
 
     public AddressCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Address");
+        setTheme("Cinema");
     }
 
 }

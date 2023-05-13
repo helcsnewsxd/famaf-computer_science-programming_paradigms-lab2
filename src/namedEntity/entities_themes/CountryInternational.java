@@ -11,7 +11,8 @@ public class CountryInternational extends Country implements International {
 
     public CountryInternational() {
         super();
-        setCategory("International");
+        setCategory("Country");
+        setTheme("International");
     }
 
 }

@@ -11,7 +11,8 @@ public class CountryOtherThemes extends Country implements OtherThemes {
 
     public CountryOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Country");
+        setTheme("OtherThemes");
     }
 
 }

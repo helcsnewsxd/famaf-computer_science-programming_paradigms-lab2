@@ -11,7 +11,8 @@ public class LastnameMusic extends Lastname implements Music {
 
     public LastnameMusic() {
         super();
-        setCategory("Music");
+        setCategory("Lastname");
+        setTheme("Music");
     }
 
 }

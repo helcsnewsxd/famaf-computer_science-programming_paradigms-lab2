@@ -11,7 +11,8 @@ public class CityFormula1 extends City implements Formula1 {
 
     public CityFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("City");
+        setTheme("Formula1");
     }
 
 }

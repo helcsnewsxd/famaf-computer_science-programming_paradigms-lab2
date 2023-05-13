@@ -11,7 +11,8 @@ public class OccupationOtherThemes extends Occupation implements OtherThemes {
 
     public OccupationOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Occupation");
+        setTheme("OtherThemes");
     }
 
 }

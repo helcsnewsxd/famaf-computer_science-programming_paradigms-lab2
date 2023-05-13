@@ -11,7 +11,8 @@ public class CompanyFootball extends Company implements Football {
 
     public CompanyFootball() {
         super();
-        setCategory("Football");
+        setCategory("Company");
+        setTheme("Football");
     }
 
 }

@@ -11,7 +11,8 @@ public class PlaceNational extends Place implements National {
 
     public PlaceNational() {
         super();
-        setCategory("National");
+        setCategory("Place");
+        setTheme("National");
     }
 
 }

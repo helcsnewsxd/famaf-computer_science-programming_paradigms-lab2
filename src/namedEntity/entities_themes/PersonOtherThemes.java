@@ -11,7 +11,8 @@ public class PersonOtherThemes extends Person implements OtherThemes {
 
     public PersonOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Person");
+        setTheme("OtherThemes");
     }
 
 }

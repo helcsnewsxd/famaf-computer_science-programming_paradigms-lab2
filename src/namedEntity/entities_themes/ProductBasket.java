@@ -11,7 +11,8 @@ public class ProductBasket extends Product implements Basket {
 
     public ProductBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Product");
+        setTheme("Basket");
     }
 
 }

@@ -11,7 +11,8 @@ public class OccupationPolitics extends Occupation implements Politics {
 
     public OccupationPolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Occupation");
+        setTheme("Politics");
     }
 
 }

@@ -11,7 +11,8 @@ public class OtherEntityFormula1 extends OtherEntity implements Formula1 {
 
     public OtherEntityFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("OtherEntity");
+        setTheme("Formula1");
     }
 
 }

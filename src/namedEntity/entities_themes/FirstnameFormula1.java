@@ -11,7 +11,8 @@ public class FirstnameFormula1 extends Firstname implements Formula1 {
 
     public FirstnameFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Firstname");
+        setTheme("Formula1");
     }
 
 }

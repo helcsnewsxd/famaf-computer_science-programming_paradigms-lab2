@@ -11,7 +11,8 @@ public class FirstnamePolitics extends Firstname implements Politics {
 
     public FirstnamePolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Firstname");
+        setTheme("Politics");
     }
 
 }

@@ -11,7 +11,8 @@ public class CityCulture extends City implements Culture {
 
     public CityCulture() {
         super();
-        setCategory("Culture");
+        setCategory("City");
+        setTheme("Culture");
     }
 
 }

@@ -11,7 +11,8 @@ public class EventCulture extends Event implements Culture {
 
     public EventCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Event");
+        setTheme("Culture");
     }
 
 }

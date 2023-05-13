@@ -11,7 +11,8 @@ public class PlacePolitics extends Place implements Politics {
 
     public PlacePolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Place");
+        setTheme("Politics");
     }
 
 }

@@ -11,7 +11,8 @@ public class PlaceFormula1 extends Place implements Formula1 {
 
     public PlaceFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Place");
+        setTheme("Formula1");
     }
 
 }

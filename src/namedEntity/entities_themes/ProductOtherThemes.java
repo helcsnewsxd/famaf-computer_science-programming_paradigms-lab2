@@ -11,7 +11,8 @@ public class ProductOtherThemes extends Product implements OtherThemes {
 
     public ProductOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Product");
+        setTheme("OtherThemes");
     }
 
 }

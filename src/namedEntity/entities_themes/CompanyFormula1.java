@@ -11,7 +11,8 @@ public class CompanyFormula1 extends Company implements Formula1 {
 
     public CompanyFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Company");
+        setTheme("Formula1");
     }
 
 }

@@ -11,7 +11,8 @@ public class OccupationFootball extends Occupation implements Football {
 
     public OccupationFootball() {
         super();
-        setCategory("Football");
+        setCategory("Occupation");
+        setTheme("Football");
     }
 
 }

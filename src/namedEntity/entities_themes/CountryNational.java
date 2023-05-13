@@ -11,7 +11,8 @@ public class CountryNational extends Country implements National {
 
     public CountryNational() {
         super();
-        setCategory("National");
+        setCategory("Country");
+        setTheme("National");
     }
 
 }

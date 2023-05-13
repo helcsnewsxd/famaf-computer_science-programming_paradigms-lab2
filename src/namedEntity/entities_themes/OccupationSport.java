@@ -11,7 +11,8 @@ public class OccupationSport extends Occupation implements Sport {
 
     public OccupationSport() {
         super();
-        setCategory("Sport");
+        setCategory("Occupation");
+        setTheme("Sport");
     }
 
 }

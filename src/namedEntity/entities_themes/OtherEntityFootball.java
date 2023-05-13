@@ -11,7 +11,8 @@ public class OtherEntityFootball extends OtherEntity implements Football {
 
     public OtherEntityFootball() {
         super();
-        setCategory("Football");
+        setCategory("OtherEntity");
+        setTheme("Football");
     }
 
 }

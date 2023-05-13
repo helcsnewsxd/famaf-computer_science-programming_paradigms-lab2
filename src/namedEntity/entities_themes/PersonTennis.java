@@ -11,7 +11,8 @@ public class PersonTennis extends Person implements Tennis {
 
     public PersonTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("Person");
+        setTheme("Tennis");
     }
 
 }

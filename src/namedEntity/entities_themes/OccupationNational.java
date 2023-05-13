@@ -11,7 +11,8 @@ public class OccupationNational extends Occupation implements National {
 
     public OccupationNational() {
         super();
-        setCategory("National");
+        setCategory("Occupation");
+        setTheme("National");
     }
 
 }

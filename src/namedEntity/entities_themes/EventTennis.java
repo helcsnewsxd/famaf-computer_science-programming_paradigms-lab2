@@ -11,7 +11,8 @@ public class EventTennis extends Event implements Tennis {
 
     public EventTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("Event");
+        setTheme("Tennis");
     }
 
 }

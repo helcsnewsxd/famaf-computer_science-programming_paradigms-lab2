@@ -11,7 +11,8 @@ public class ProductMusic extends Product implements Music {
 
     public ProductMusic() {
         super();
-        setCategory("Music");
+        setCategory("Product");
+        setTheme("Music");
     }
 
 }

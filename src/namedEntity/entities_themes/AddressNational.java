@@ -11,7 +11,8 @@ public class AddressNational extends Address implements National {
 
     public AddressNational() {
         super();
-        setCategory("National");
+        setCategory("Address");
+        setTheme("National");
     }
 
 }

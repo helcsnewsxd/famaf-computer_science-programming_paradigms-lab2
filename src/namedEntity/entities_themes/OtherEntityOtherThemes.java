@@ -11,7 +11,8 @@ public class OtherEntityOtherThemes extends OtherEntity implements OtherThemes {
 
     public OtherEntityOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("OtherEntity");
+        setTheme("OtherThemes");
     }
 
 }

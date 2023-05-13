@@ -11,7 +11,8 @@ public class FirstnameCulture extends Firstname implements Culture {
 
     public FirstnameCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Firstname");
+        setTheme("Culture");
     }
 
 }

@@ -11,7 +11,8 @@ public class OccupationCulture extends Occupation implements Culture {
 
     public OccupationCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Occupation");
+        setTheme("Culture");
     }
 
 }

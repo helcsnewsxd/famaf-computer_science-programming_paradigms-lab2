@@ -11,7 +11,8 @@ public class ProductPolitics extends Product implements Politics {
 
     public ProductPolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Product");
+        setTheme("Politics");
     }
 
 }

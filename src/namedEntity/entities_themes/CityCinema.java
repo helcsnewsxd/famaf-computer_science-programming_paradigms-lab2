@@ -11,7 +11,8 @@ public class CityCinema extends City implements Cinema {
 
     public CityCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("City");
+        setTheme("Cinema");
     }
 
 }

@@ -11,7 +11,8 @@ public class OtherEntityTennis extends OtherEntity implements Tennis {
 
     public OtherEntityTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("OtherEntity");
+        setTheme("Tennis");
     }
 
 }

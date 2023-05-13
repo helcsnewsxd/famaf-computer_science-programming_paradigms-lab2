@@ -11,7 +11,8 @@ public class EventMusic extends Event implements Music {
 
     public EventMusic() {
         super();
-        setCategory("Music");
+        setCategory("Event");
+        setTheme("Music");
     }
 
 }

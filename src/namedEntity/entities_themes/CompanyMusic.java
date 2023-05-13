@@ -11,7 +11,8 @@ public class CompanyMusic extends Company implements Music {
 
     public CompanyMusic() {
         super();
-        setCategory("Music");
+        setCategory("Company");
+        setTheme("Music");
     }
 
 }

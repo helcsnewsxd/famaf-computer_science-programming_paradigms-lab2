@@ -11,7 +11,8 @@ public class ProductFootball extends Product implements Football {
 
     public ProductFootball() {
         super();
-        setCategory("Football");
+        setCategory("Product");
+        setTheme("Football");
     }
 
 }

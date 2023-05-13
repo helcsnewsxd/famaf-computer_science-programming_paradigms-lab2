@@ -11,7 +11,8 @@ public class OtherEntityNational extends OtherEntity implements National {
 
     public OtherEntityNational() {
         super();
-        setCategory("National");
+        setCategory("OtherEntity");
+        setTheme("National");
     }
 
 }

@@ -11,7 +11,8 @@ public class PersonFootball extends Person implements Football {
 
     public PersonFootball() {
         super();
-        setCategory("Football");
+        setCategory("Person");
+        setTheme("Football");
     }
 
 }

@@ -11,7 +11,8 @@ public class DateMusic extends Date implements Music {
 
     public DateMusic() {
         super();
-        setCategory("Music");
+        setCategory("Date");
+        setTheme("Music");
     }
 
 }

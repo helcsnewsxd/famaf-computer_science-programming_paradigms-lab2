@@ -11,7 +11,8 @@ public class OccupationMusic extends Occupation implements Music {
 
     public OccupationMusic() {
         super();
-        setCategory("Music");
+        setCategory("Occupation");
+        setTheme("Music");
     }
 
 }

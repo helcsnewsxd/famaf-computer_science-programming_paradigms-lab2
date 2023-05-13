@@ -11,7 +11,8 @@ public class CompanyCulture extends Company implements Culture {
 
     public CompanyCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Company");
+        setTheme("Culture");
     }
 
 }

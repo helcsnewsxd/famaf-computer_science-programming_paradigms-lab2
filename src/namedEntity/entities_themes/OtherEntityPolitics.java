@@ -11,7 +11,8 @@ public class OtherEntityPolitics extends OtherEntity implements Politics {
 
     public OtherEntityPolitics() {
         super();
-        setCategory("Politics");
+        setCategory("OtherEntity");
+        setTheme("Politics");
     }
 
 }

@@ -11,7 +11,8 @@ public class EventInternational extends Event implements International {
 
     public EventInternational() {
         super();
-        setCategory("International");
+        setCategory("Event");
+        setTheme("International");
     }
 
 }

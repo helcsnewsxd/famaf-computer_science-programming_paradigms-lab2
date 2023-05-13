@@ -11,7 +11,8 @@ public class DateSport extends Date implements Sport {
 
     public DateSport() {
         super();
-        setCategory("Sport");
+        setCategory("Date");
+        setTheme("Sport");
     }
 
 }

@@ -11,7 +11,8 @@ public class CompanyInternational extends Company implements International {
 
     public CompanyInternational() {
         super();
-        setCategory("International");
+        setCategory("Company");
+        setTheme("International");
     }
 
 }

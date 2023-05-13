@@ -11,7 +11,8 @@ public class OtherEntityCinema extends OtherEntity implements Cinema {
 
     public OtherEntityCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("OtherEntity");
+        setTheme("Cinema");
     }
 
 }

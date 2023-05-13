@@ -11,7 +11,8 @@ public class DateTennis extends Date implements Tennis {
 
     public DateTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("Date");
+        setTheme("Tennis");
     }
 
 }

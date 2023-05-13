@@ -11,7 +11,8 @@ public class LastnameInternational extends Lastname implements International {
 
     public LastnameInternational() {
         super();
-        setCategory("International");
+        setCategory("Lastname");
+        setTheme("International");
     }
 
 }

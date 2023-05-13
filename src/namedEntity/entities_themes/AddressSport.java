@@ -11,7 +11,8 @@ public class AddressSport extends Address implements Sport {
 
     public AddressSport() {
         super();
-        setCategory("Sport");
+        setCategory("Address");
+        setTheme("Sport");
     }
 
 }

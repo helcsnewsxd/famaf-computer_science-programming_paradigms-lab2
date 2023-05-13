@@ -11,7 +11,8 @@ public class AddressMusic extends Address implements Music {
 
     public AddressMusic() {
         super();
-        setCategory("Music");
+        setCategory("Address");
+        setTheme("Music");
     }
 
 }

@@ -11,7 +11,8 @@ public class OtherEntityCulture extends OtherEntity implements Culture {
 
     public OtherEntityCulture() {
         super();
-        setCategory("Culture");
+        setCategory("OtherEntity");
+        setTheme("Culture");
     }
 
 }

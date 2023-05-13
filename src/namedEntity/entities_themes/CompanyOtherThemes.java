@@ -11,7 +11,8 @@ public class CompanyOtherThemes extends Company implements OtherThemes {
 
     public CompanyOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Company");
+        setTheme("OtherThemes");
     }
 
 }

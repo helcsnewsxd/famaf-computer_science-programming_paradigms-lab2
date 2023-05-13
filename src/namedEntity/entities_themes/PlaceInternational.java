@@ -11,7 +11,8 @@ public class PlaceInternational extends Place implements International {
 
     public PlaceInternational() {
         super();
-        setCategory("International");
+        setCategory("Place");
+        setTheme("International");
     }
 
 }

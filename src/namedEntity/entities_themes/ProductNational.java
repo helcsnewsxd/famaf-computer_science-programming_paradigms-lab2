@@ -11,7 +11,8 @@ public class ProductNational extends Product implements National {
 
     public ProductNational() {
         super();
-        setCategory("National");
+        setCategory("Product");
+        setTheme("National");
     }
 
 }

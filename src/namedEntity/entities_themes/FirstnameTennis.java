@@ -11,7 +11,8 @@ public class FirstnameTennis extends Firstname implements Tennis {
 
     public FirstnameTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("Firstname");
+        setTheme("Tennis");
     }
 
 }

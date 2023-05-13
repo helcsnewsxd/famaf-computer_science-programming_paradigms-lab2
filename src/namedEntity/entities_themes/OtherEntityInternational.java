@@ -11,7 +11,8 @@ public class OtherEntityInternational extends OtherEntity implements Internation
 
     public OtherEntityInternational() {
         super();
-        setCategory("International");
+        setCategory("OtherEntity");
+        setTheme("International");
     }
 
 }

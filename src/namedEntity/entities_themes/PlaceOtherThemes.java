@@ -11,7 +11,8 @@ public class PlaceOtherThemes extends Place implements OtherThemes {
 
     public PlaceOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Place");
+        setTheme("OtherThemes");
     }
 
 }

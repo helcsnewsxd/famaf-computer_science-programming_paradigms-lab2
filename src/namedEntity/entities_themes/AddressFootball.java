@@ -11,7 +11,8 @@ public class AddressFootball extends Address implements Football {
 
     public AddressFootball() {
         super();
-        setCategory("Football");
+        setCategory("Address");
+        setTheme("Football");
     }
 
 }

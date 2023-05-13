@@ -11,7 +11,8 @@ public class EventPolitics extends Event implements Politics {
 
     public EventPolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Event");
+        setTheme("Politics");
     }
 
 }

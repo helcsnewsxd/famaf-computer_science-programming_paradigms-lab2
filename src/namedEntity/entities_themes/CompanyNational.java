@@ -11,7 +11,8 @@ public class CompanyNational extends Company implements National {
 
     public CompanyNational() {
         super();
-        setCategory("National");
+        setCategory("Company");
+        setTheme("National");
     }
 
 }

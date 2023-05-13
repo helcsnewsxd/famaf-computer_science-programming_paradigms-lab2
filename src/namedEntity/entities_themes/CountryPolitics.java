@@ -11,7 +11,8 @@ public class CountryPolitics extends Country implements Politics {
 
     public CountryPolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Country");
+        setTheme("Politics");
     }
 
 }

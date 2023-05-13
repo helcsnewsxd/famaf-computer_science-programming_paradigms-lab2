@@ -11,7 +11,8 @@ public class CountryMusic extends Country implements Music {
 
     public CountryMusic() {
         super();
-        setCategory("Music");
+        setCategory("Country");
+        setTheme("Music");
     }
 
 }

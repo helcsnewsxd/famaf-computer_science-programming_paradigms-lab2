@@ -11,7 +11,8 @@ public class AddressTennis extends Address implements Tennis {
 
     public AddressTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("Address");
+        setTheme("Tennis");
     }
 
 }

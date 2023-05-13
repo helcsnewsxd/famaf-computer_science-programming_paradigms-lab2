@@ -11,7 +11,8 @@ public class DateCulture extends Date implements Culture {
 
     public DateCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Date");
+        setTheme("Culture");
     }
 
 }

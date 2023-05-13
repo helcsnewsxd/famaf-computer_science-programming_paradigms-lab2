@@ -11,7 +11,8 @@ public class DateNational extends Date implements National {
 
     public DateNational() {
         super();
-        setCategory("National");
+        setCategory("Date");
+        setTheme("National");
     }
 
 }

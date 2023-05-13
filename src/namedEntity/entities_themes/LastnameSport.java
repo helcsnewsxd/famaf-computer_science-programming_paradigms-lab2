@@ -11,7 +11,8 @@ public class LastnameSport extends Lastname implements Sport {
 
     public LastnameSport() {
         super();
-        setCategory("Sport");
+        setCategory("Lastname");
+        setTheme("Sport");
     }
 
 }

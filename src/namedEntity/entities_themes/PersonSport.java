@@ -11,7 +11,8 @@ public class PersonSport extends Person implements Sport {
 
     public PersonSport() {
         super();
-        setCategory("Sport");
+        setCategory("Person");
+        setTheme("Sport");
     }
 
 }

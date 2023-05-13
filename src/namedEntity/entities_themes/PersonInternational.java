@@ -11,7 +11,8 @@ public class PersonInternational extends Person implements International {
 
     public PersonInternational() {
         super();
-        setCategory("International");
+        setCategory("Person");
+        setTheme("International");
     }
 
 }

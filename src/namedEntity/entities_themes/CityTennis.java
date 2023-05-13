@@ -11,7 +11,8 @@ public class CityTennis extends City implements Tennis {
 
     public CityTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("City");
+        setTheme("Tennis");
     }
 
 }

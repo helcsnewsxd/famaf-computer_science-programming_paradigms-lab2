@@ -11,7 +11,8 @@ public class CompanyBasket extends Company implements Basket {
 
     public CompanyBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Company");
+        setTheme("Basket");
     }
 
 }

@@ -11,7 +11,8 @@ public class CountryCinema extends Country implements Cinema {
 
     public CountryCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Country");
+        setTheme("Cinema");
     }
 
 }

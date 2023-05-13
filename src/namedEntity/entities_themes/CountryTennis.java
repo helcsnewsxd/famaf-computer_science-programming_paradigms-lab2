@@ -11,7 +11,8 @@ public class CountryTennis extends Country implements Tennis {
 
     public CountryTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("Country");
+        setTheme("Tennis");
     }
 
 }

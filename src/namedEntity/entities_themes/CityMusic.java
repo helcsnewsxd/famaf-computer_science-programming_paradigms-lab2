@@ -11,7 +11,8 @@ public class CityMusic extends City implements Music {
 
     public CityMusic() {
         super();
-        setCategory("Music");
+        setCategory("City");
+        setTheme("Music");
     }
 
 }

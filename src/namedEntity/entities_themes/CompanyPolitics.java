@@ -11,7 +11,8 @@ public class CompanyPolitics extends Company implements Politics {
 
     public CompanyPolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Company");
+        setTheme("Politics");
     }
 
 }

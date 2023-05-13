@@ -11,7 +11,8 @@ public class PersonNational extends Person implements National {
 
     public PersonNational() {
         super();
-        setCategory("National");
+        setCategory("Person");
+        setTheme("National");
     }
 
 }

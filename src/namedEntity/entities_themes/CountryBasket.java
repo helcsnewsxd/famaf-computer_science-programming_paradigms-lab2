@@ -11,7 +11,8 @@ public class CountryBasket extends Country implements Basket {
 
     public CountryBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Country");
+        setTheme("Basket");
     }
 
 }

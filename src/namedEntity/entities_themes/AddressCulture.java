@@ -11,7 +11,8 @@ public class AddressCulture extends Address implements Culture {
 
     public AddressCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Address");
+        setTheme("Culture");
     }
 
 }

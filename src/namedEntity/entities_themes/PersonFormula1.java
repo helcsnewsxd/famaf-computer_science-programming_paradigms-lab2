@@ -11,7 +11,8 @@ public class PersonFormula1 extends Person implements Formula1 {
 
     public PersonFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Person");
+        setTheme("Formula1");
     }
 
 }

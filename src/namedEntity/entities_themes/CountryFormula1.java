@@ -11,7 +11,8 @@ public class CountryFormula1 extends Country implements Formula1 {
 
     public CountryFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Country");
+        setTheme("Formula1");
     }
 
 }

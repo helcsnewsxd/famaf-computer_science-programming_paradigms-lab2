@@ -11,7 +11,8 @@ public class AddressOtherThemes extends Address implements OtherThemes {
 
     public AddressOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Address");
+        setTheme("OtherThemes");
     }
 
 }

@@ -11,7 +11,8 @@ public class ProductCinema extends Product implements Cinema {
 
     public ProductCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Product");
+        setTheme("Cinema");
     }
 
 }

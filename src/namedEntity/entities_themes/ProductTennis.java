@@ -11,7 +11,8 @@ public class ProductTennis extends Product implements Tennis {
 
     public ProductTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("Product");
+        setTheme("Tennis");
     }
 
 }

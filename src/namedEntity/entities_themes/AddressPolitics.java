@@ -11,7 +11,8 @@ public class AddressPolitics extends Address implements Politics {
 
     public AddressPolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Address");
+        setTheme("Politics");
     }
 
 }

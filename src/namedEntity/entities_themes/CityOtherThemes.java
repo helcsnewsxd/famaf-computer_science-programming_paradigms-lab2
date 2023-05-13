@@ -11,7 +11,8 @@ public class CityOtherThemes extends City implements OtherThemes {
 
     public CityOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("City");
+        setTheme("OtherThemes");
     }
 
 }

@@ -11,7 +11,8 @@ public class AddressBasket extends Address implements Basket {
 
     public AddressBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Address");
+        setTheme("Basket");
     }
 
 }

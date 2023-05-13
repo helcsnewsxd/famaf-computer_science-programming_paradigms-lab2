@@ -11,7 +11,8 @@ public class CityFootball extends City implements Football {
 
     public CityFootball() {
         super();
-        setCategory("Football");
+        setCategory("City");
+        setTheme("Football");
     }
 
 }

@@ -11,7 +11,8 @@ public class ProductInternational extends Product implements International {
 
     public ProductInternational() {
         super();
-        setCategory("International");
+        setCategory("Product");
+        setTheme("International");
     }
 
 }

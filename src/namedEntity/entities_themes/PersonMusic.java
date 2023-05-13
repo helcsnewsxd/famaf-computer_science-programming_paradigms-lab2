@@ -11,7 +11,8 @@ public class PersonMusic extends Person implements Music {
 
     public PersonMusic() {
         super();
-        setCategory("Music");
+        setCategory("Person");
+        setTheme("Music");
     }
 
 }

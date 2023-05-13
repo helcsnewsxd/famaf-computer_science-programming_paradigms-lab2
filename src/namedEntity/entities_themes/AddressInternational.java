@@ -11,7 +11,8 @@ public class AddressInternational extends Address implements International {
 
     public AddressInternational() {
         super();
-        setCategory("International");
+        setCategory("Address");
+        setTheme("International");
     }
 
 }

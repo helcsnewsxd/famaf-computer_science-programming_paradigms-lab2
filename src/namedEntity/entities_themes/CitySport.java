@@ -11,7 +11,8 @@ public class CitySport extends City implements Sport {
 
     public CitySport() {
         super();
-        setCategory("Sport");
+        setCategory("City");
+        setTheme("Sport");
     }
 
 }

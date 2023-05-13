@@ -11,7 +11,8 @@ public class EventFormula1 extends Event implements Formula1 {
 
     public EventFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Event");
+        setTheme("Formula1");
     }
 
 }

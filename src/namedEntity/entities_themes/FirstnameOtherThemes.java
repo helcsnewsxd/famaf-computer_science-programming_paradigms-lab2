@@ -11,7 +11,8 @@ public class FirstnameOtherThemes extends Firstname implements OtherThemes {
 
     public FirstnameOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Firstname");
+        setTheme("OtherThemes");
     }
 
 }

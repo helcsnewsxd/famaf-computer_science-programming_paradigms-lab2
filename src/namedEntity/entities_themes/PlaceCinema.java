@@ -11,7 +11,8 @@ public class PlaceCinema extends Place implements Cinema {
 
     public PlaceCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Place");
+        setTheme("Cinema");
     }
 
 }

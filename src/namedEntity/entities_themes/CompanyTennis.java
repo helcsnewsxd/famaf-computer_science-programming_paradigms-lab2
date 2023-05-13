@@ -11,7 +11,8 @@ public class CompanyTennis extends Company implements Tennis {
 
     public CompanyTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("Company");
+        setTheme("Tennis");
     }
 
 }

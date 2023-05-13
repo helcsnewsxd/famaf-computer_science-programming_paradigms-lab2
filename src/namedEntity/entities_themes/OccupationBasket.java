@@ -11,7 +11,8 @@ public class OccupationBasket extends Occupation implements Basket {
 
     public OccupationBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Occupation");
+        setTheme("Basket");
     }
 
 }

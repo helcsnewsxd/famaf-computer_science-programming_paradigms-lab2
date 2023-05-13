@@ -11,7 +11,8 @@ public class OccupationInternational extends Occupation implements International
 
     public OccupationInternational() {
         super();
-        setCategory("International");
+        setCategory("Occupation");
+        setTheme("International");
     }
 
 }

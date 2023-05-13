@@ -11,7 +11,8 @@ public class CountryFootball extends Country implements Football {
 
     public CountryFootball() {
         super();
-        setCategory("Football");
+        setCategory("Country");
+        setTheme("Football");
     }
 
 }

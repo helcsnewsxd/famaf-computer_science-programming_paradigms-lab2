@@ -11,7 +11,8 @@ public class DateFormula1 extends Date implements Formula1 {
 
     public DateFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Date");
+        setTheme("Formula1");
     }
 
 }

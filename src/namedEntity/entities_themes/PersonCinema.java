@@ -11,7 +11,8 @@ public class PersonCinema extends Person implements Cinema {
 
     public PersonCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Person");
+        setTheme("Cinema");
     }
 
 }

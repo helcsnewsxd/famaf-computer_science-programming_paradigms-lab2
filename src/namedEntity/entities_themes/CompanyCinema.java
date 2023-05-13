@@ -11,7 +11,8 @@ public class CompanyCinema extends Company implements Cinema {
 
     public CompanyCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Company");
+        setTheme("Cinema");
     }
 
 }

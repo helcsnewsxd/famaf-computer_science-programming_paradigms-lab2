@@ -11,7 +11,8 @@ public class EventSport extends Event implements Sport {
 
     public EventSport() {
         super();
-        setCategory("Sport");
+        setCategory("Event");
+        setTheme("Sport");
     }
 
 }

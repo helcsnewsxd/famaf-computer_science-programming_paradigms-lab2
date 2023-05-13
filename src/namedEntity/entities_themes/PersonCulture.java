@@ -11,7 +11,8 @@ public class PersonCulture extends Person implements Culture {
 
     public PersonCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Person");
+        setTheme("Culture");
     }
 
 }

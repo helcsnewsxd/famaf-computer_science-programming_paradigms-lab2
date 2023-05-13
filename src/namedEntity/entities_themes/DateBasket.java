@@ -11,7 +11,8 @@ public class DateBasket extends Date implements Basket {
 
     public DateBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Date");
+        setTheme("Basket");
     }
 
 }

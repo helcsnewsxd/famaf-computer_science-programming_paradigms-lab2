@@ -11,7 +11,8 @@ public class PlaceTennis extends Place implements Tennis {
 
     public PlaceTennis() {
         super();
-        setCategory("Tennis");
+        setCategory("Place");
+        setTheme("Tennis");
     }
 
 }

@@ -11,7 +11,8 @@ public class EventBasket extends Event implements Basket {
 
     public EventBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Event");
+        setTheme("Basket");
     }
 
 }

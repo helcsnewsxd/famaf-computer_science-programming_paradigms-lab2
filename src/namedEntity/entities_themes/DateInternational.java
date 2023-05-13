@@ -11,7 +11,8 @@ public class DateInternational extends Date implements International {
 
     public DateInternational() {
         super();
-        setCategory("International");
+        setCategory("Date");
+        setTheme("International");
     }
 
 }

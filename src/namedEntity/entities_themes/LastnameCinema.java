@@ -11,7 +11,8 @@ public class LastnameCinema extends Lastname implements Cinema {
 
     public LastnameCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Lastname");
+        setTheme("Cinema");
     }
 
 }

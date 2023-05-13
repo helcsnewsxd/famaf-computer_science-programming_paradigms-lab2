@@ -11,7 +11,8 @@ public class AddressFormula1 extends Address implements Formula1 {
 
     public AddressFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Address");
+        setTheme("Formula1");
     }
 
 }

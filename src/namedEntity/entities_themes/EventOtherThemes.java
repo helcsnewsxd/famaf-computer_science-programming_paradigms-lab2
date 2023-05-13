@@ -11,7 +11,8 @@ public class EventOtherThemes extends Event implements OtherThemes {
 
     public EventOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Event");
+        setTheme("OtherThemes");
     }
 
 }

@@ -11,7 +11,8 @@ public class DateCinema extends Date implements Cinema {
 
     public DateCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Date");
+        setTheme("Cinema");
     }
 
 }

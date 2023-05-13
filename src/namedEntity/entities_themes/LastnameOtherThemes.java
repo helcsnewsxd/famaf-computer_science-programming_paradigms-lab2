@@ -11,7 +11,8 @@ public class LastnameOtherThemes extends Lastname implements OtherThemes {
 
     public LastnameOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Lastname");
+        setTheme("OtherThemes");
     }
 
 }

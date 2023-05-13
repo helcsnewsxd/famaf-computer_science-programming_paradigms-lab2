@@ -11,7 +11,8 @@ public class LastnameNational extends Lastname implements National {
 
     public LastnameNational() {
         super();
-        setCategory("National");
+        setCategory("Lastname");
+        setTheme("National");
     }
 
 }

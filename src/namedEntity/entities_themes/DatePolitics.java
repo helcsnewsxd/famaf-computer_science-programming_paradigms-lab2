@@ -11,7 +11,8 @@ public class DatePolitics extends Date implements Politics {
 
     public DatePolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Date");
+        setTheme("Politics");
     }
 
 }

@@ -11,7 +11,8 @@ public class PlaceCulture extends Place implements Culture {
 
     public PlaceCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Place");
+        setTheme("Culture");
     }
 
 }

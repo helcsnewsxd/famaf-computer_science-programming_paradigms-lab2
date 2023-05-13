@@ -11,7 +11,8 @@ public class CityPolitics extends City implements Politics {
 
     public CityPolitics() {
         super();
-        setCategory("Politics");
+        setCategory("City");
+        setTheme("Politics");
     }
 
 }

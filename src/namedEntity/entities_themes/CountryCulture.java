@@ -11,7 +11,8 @@ public class CountryCulture extends Country implements Culture {
 
     public CountryCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Country");
+        setTheme("Culture");
     }
 
 }

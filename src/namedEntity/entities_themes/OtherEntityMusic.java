@@ -11,7 +11,8 @@ public class OtherEntityMusic extends OtherEntity implements Music {
 
     public OtherEntityMusic() {
         super();
-        setCategory("Music");
+        setCategory("OtherEntity");
+        setTheme("Music");
     }
 
 }

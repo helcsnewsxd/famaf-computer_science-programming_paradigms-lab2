@@ -11,7 +11,8 @@ public class FirstnameBasket extends Firstname implements Basket {
 
     public FirstnameBasket() {
         super();
-        setCategory("Basket");
+        setCategory("Firstname");
+        setTheme("Basket");
     }
 
 }

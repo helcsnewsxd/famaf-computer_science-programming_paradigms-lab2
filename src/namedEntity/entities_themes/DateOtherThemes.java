@@ -11,7 +11,8 @@ public class DateOtherThemes extends Date implements OtherThemes {
 
     public DateOtherThemes() {
         super();
-        setCategory("OtherThemes");
+        setCategory("Date");
+        setTheme("OtherThemes");
     }
 
 }

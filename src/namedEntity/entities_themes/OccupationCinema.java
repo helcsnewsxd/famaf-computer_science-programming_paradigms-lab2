@@ -11,7 +11,8 @@ public class OccupationCinema extends Occupation implements Cinema {
 
     public OccupationCinema() {
         super();
-        setCategory("Cinema");
+        setCategory("Occupation");
+        setTheme("Cinema");
     }
 
 }

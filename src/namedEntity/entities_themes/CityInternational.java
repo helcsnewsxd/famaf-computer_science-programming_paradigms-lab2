@@ -11,7 +11,8 @@ public class CityInternational extends City implements International {
 
     public CityInternational() {
         super();
-        setCategory("International");
+        setCategory("City");
+        setTheme("International");
     }
 
 }

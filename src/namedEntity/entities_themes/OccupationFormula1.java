@@ -11,7 +11,8 @@ public class OccupationFormula1 extends Occupation implements Formula1 {
 
     public OccupationFormula1() {
         super();
-        setCategory("Formula1");
+        setCategory("Occupation");
+        setTheme("Formula1");
     }
 
 }

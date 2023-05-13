@@ -11,7 +11,8 @@ public class CityNational extends City implements National {
 
     public CityNational() {
         super();
-        setCategory("National");
+        setCategory("City");
+        setTheme("National");
     }
 
 }

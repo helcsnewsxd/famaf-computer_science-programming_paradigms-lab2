@@ -11,7 +11,8 @@ public class OtherEntityBasket extends OtherEntity implements Basket {
 
     public OtherEntityBasket() {
         super();
-        setCategory("Basket");
+        setCategory("OtherEntity");
+        setTheme("Basket");
     }
 
 }

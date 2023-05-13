@@ -11,7 +11,8 @@ public class EventNational extends Event implements National {
 
     public EventNational() {
         super();
-        setCategory("National");
+        setCategory("Event");
+        setTheme("National");
     }
 
 }

@@ -11,7 +11,8 @@ public class PersonPolitics extends Person implements Politics {
 
     public PersonPolitics() {
         super();
-        setCategory("Politics");
+        setCategory("Person");
+        setTheme("Politics");
     }
 
 }

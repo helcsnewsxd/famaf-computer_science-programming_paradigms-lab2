@@ -11,7 +11,8 @@ public class ProductCulture extends Product implements Culture {
 
     public ProductCulture() {
         super();
-        setCategory("Culture");
+        setCategory("Product");
+        setTheme("Culture");
     }
 
 }

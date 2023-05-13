@@ -11,7 +11,8 @@ public class PlaceSport extends Place implements Sport {
 
     public PlaceSport() {
         super();
-        setCategory("Sport");
+        setCategory("Place");
+        setTheme("Sport");
     }
 
 }
