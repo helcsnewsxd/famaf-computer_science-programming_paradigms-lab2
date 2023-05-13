@@ -74,6 +74,7 @@ public class Main {
                                     System.out.println(namedEntity.getName());
                                     System.out.println(namedEntity.getFrequency());
                                     System.out.println(namedEntity.getCategory());
+                                    System.out.println(namedEntity.getTheme());
                                     System.out.println(namedEntity.getClass().toString());
                                     System.out.println("-----------");
                                 }

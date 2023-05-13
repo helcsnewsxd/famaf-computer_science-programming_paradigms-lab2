@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import namedEntity.entities.NamedEntity;
+import namedEntity.entities_themes.OtherEntityOtherThemes;
 import namedEntity.heuristic.Heuristic;
 
 public class Article {
@@ -92,7 +93,7 @@ public class Article {
                     // Si no hay clasificacion definida para esta named entity, su tipo sera 
                     // generico.
                     if(categoryClass == null) {
-                        categoryClass = NamedEntity.class;
+                        categoryClass = OtherEntityOtherThemes.class;
                     }
                     ne = categoryClass.getDeclaredConstructor().newInstance();
                     ne.setFrequency(1);
