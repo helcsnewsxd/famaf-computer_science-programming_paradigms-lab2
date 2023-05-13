@@ -88,7 +88,7 @@ public class Article {
             if (h.isEntity(s)) {
                 NamedEntity ne = this.getNamedEntity(s);
                 if (ne == null) {
-                    Class<? extends NamedEntity> categoryClass = h.getCategory("s");
+                    Class<? extends NamedEntity> categoryClass = h.getCategory(s);
                     // Si no hay clasificacion definida para esta named entity, su tipo sera 
                     // generico.
                     if(categoryClass == null) {

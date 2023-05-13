@@ -58,13 +58,13 @@ public class Main {
                         GeneralParser generalParser = new GeneralParser();
                         Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
 
-                        if (normalPrint) {
+                        if (!normalPrint) {
                             // Print feed to user
 
                             feed.prettyPrint();
                         } else {
                             // heuristic in use
-                            Heuristic heur = new RandomHeuristic();
+                            Heuristic heur = new QuickHeuristic();
 
 
                             // computes the named entities for each article, saving all ne in their respective lists
@@ -75,6 +75,7 @@ public class Main {
                                     System.out.println(namedEntity.getFrequency());
                                     System.out.println(namedEntity.getType());
                                     System.out.println(namedEntity.themeToString());
+                                    System.out.println(namedEntity.getClass().toString());
                                     System.out.println("-----------");
                                 }
                             }

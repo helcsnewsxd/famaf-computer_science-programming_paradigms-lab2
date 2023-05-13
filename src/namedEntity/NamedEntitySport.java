@@ -9,6 +9,9 @@ public class NamedEntitySport extends NamedEntity implements Sport {
         //TODO Auto-generated constructor stub
     }
 
+    public NamedEntitySport() {
+    }
+
     public String themeToString() {
         return "Deporte";
     }
