@@ -32,6 +32,7 @@ public class HTTPRequester {
 
         URL urlObj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlObj.openConnection();
+        con.addRequestProperty("User-Agent","Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0");
         con.setRequestMethod("GET");
         con.setInstanceFollowRedirects(true);
 
