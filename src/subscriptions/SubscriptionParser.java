@@ -4,6 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import org.json.JSONTokener;
+
+import webPageParser.GeneralParser;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,6 +27,7 @@ public class SubscriptionParser {
             SimpleSubscription simpleSubscription = new SimpleSubscription();
             simpleSubscription.setUrl(obj.getString("url"));
             simpleSubscription.setUrlType(obj.getString("urlType"));
+            simpleSubscription.setParser(new GeneralParser());
 
             JSONArray arrUrlParams = obj.getJSONArray("urlParams");
             for (int j = 0, szj = arrUrlParams.length(); j < szj; j++) {

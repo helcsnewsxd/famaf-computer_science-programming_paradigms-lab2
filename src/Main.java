@@ -49,14 +49,7 @@ public class Main {
 
                 for (int j = 0, szj = simpleSubscription.getUrlParametersSize(); j < szj; j++) {
                     try {
-                        // Get feed with HTTP request
-                        HTTPRequester httpRequester = new HTTPRequester();
-                        String feedText = httpRequester.getFeed(simpleSubscription.getFormattedUrlForParameter(j),
-                                simpleSubscription.getUrlType());
-
-                        // Get feed parsing the text
-                        GeneralParser generalParser = new GeneralParser();
-                        Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
+                        Feed feed = simpleSubscription.parse(j);
 
                         if (normalPrint) {
                             // Print feed to user
