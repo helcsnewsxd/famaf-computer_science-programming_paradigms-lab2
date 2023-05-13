@@ -16,7 +16,7 @@ import webPageParser.GeneralParser;
 import httpRequest.HTTPRequester;
 import httpRequest.InvalidUrlTypeToFeedException;
 import httpRequest.HttpRequestException;
-import namedEntity.NamedEntity;
+import namedEntity.entities.NamedEntity;
 import namedEntity.heuristic.Heuristic;
 import namedEntity.heuristic.QuickHeuristic;
 import namedEntity.heuristic.RandomHeuristic;
@@ -73,8 +73,7 @@ public class Main {
                                 for (NamedEntity namedEntity : article.getNamedEntityList()) {
                                     System.out.println(namedEntity.getName());
                                     System.out.println(namedEntity.getFrequency());
-                                    System.out.println(namedEntity.getType());
-                                    System.out.println(namedEntity.themeToString());
+                                    System.out.println(namedEntity.getCategory());
                                     System.out.println(namedEntity.getClass().toString());
                                     System.out.println("-----------");
                                 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import namedEntity.NamedEntity;
+import namedEntity.entities.NamedEntity;
 import namedEntity.heuristic.Heuristic;
 
 public class Article {

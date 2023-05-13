@@ -2,13 +2,13 @@ package namedEntity.heuristic;
 
 import java.util.Map;
 
-import namedEntity.NameSport;
-import namedEntity.NamedEntity;
+import namedEntity.entities.NamedEntity;
+import namedEntity.entities_themes.LastnameFootball;
 
 public abstract class Heuristic {
 
     private static Map<String, Class<? extends NamedEntity>> categoryMap = Map.of(
-            "Dybala", NameSport.class
+            "Dybala", LastnameFootball.class
             // "Apple", "Company",
             // "Google", "Company",
             // "Musk", new PersonTema(),
