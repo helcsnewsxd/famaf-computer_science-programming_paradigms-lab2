@@ -21,7 +21,7 @@ import java.util.Date;
 
 import java.util.Locale;
 
-public class RssParser {
+public class RssParser extends GeneralParser {
     public Feed parse(String content) throws ParserConfigurationException, IOException, SAXException, ParseException {
         Feed feed = new Feed("Unnamed Feed");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

@@ -9,17 +9,13 @@ import java.util.List;
 import java.util.ArrayList;
 
 import subscriptions.SimpleSubscription;
-import subscriptions.SubscriptionParser;
 import subscriptions.Subscriptions;
 import webPageParser.EmptyFeedException;
-import webPageParser.GeneralParser;
-import httpRequest.HTTPRequester;
 import httpRequest.InvalidUrlTypeToFeedException;
 import httpRequest.HttpRequestException;
 import namedEntity.entities.NamedEntity;
 import namedEntity.heuristic.Heuristic;
 import namedEntity.heuristic.QuickHeuristic;
-import namedEntity.heuristic.RandomHeuristic;
 import feed.Article;
 import feed.Feed;
 
@@ -41,8 +37,8 @@ public class Main {
             List<String> subscriptionErrors = new ArrayList<String>();
 
             // Get subscriptions
-            SubscriptionParser subscriptionParser = new SubscriptionParser();
-            Subscriptions subscriptions = subscriptionParser.parse(subscriptionsFilePath);
+            Subscriptions subscriptions = new Subscriptions();
+            subscriptions.parse(subscriptionsFilePath);
 
             for (int i = 0, szi = subscriptions.getSubscriptionListSize(); i < szi; i++) {
                 SimpleSubscription simpleSubscription = subscriptions.getSubscriptionList(i);

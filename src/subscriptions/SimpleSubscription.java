@@ -31,9 +31,8 @@ public class SimpleSubscription {
         this.urlParameters = new ArrayList<String>();
     }
     
-    public SimpleSubscription(String url, List<String> urlParameters, String urlType, GeneralParser parser) {
+    public SimpleSubscription(String url, List<String> urlParameters, String urlType) {
         super();
-        this.parser = parser;
         this.url = url;
         this.urlType = urlType;
         
@@ -92,7 +91,7 @@ public class SimpleSubscription {
         String feedText = httpRequester.getFeed(this.getFormattedUrlForParameter(paramIndex),
                 this.getUrlType());
 
-        Feed feed = this.parser.parse(feedText, this.getUrlType());
+        Feed feed = this.parser.parse(feedText);
         return feed;
 
     }

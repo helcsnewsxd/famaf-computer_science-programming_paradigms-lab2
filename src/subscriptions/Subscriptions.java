@@ -1,7 +1,17 @@
 package subscriptions;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import webPageParser.RedditParser;
+import webPageParser.RssParser;
 
 public class Subscriptions {
     private List<SimpleSubscription> subscriptionsList;
@@ -44,6 +54,37 @@ public class Subscriptions {
 
     public void prettyPrint() {
         System.out.println(this.toString());
+    }
+
+    public void parse(String subscriptionsFilePath) throws FileNotFoundException, JSONException {
+
+        FileReader reader = new FileReader(subscriptionsFilePath);
+
+        JSONTokener token = new JSONTokener(reader);
+        JSONArray arr = new JSONArray(token);
+
+        for (int i = 0, szi = arr.length(); i < szi; i++) {
+            JSONObject obj = arr.getJSONObject(i);
+
+            SimpleSubscription simpleSubscription = new SimpleSubscription();
+            simpleSubscription.setUrl(obj.getString("url"));
+            String urlType = obj.getString("urlType");
+            simpleSubscription.setUrlType(urlType);
+
+            // Inyectar parser adecuado
+            if(urlType.equals("rss")) {
+                simpleSubscription.setParser(new RssParser());
+            } else if(urlType.equals("reddit")) {
+                simpleSubscription.setParser(new RedditParser());
+            }
+
+            JSONArray arrUrlParams = obj.getJSONArray("urlParams");
+            for (int j = 0, szj = arrUrlParams.length(); j < szj; j++) {
+                simpleSubscription.addUrlParameter(arrUrlParams.getString(j));
+            }
+
+            this.addSimpleSubscription(simpleSubscription);
+        }
     }
 
     // MAIN

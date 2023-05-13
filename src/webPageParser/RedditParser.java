@@ -11,7 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 
-public class RedditParser {
+public class RedditParser extends GeneralParser{
     public Feed parse(String content) throws EmptyFeedException {
         // return null;
         Feed feed = new Feed("Unnamed Feed");
