@@ -13,10 +13,10 @@ def importPath(s):
     return ret
 
 def genEntityTheme(entity, theme):
-    sys.stdout = open("../entities_themes/"+entity+theme+".java", "wx")
-
     entityName = onlyName(entity)
     themeName = onlyName(theme)
+
+    sys.stdout = open("../entities_themes/"+entityName+themeName+".java", "w+")
 
     print(f"package namedEntity.entities_themes;\n"
           f"\n"
