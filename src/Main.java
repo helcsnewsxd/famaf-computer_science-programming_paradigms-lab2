@@ -58,7 +58,7 @@ public class Main {
                         GeneralParser generalParser = new GeneralParser();
                         Feed feed = generalParser.parse(feedText, simpleSubscription.getUrlType());
 
-                        if (!normalPrint) {
+                        if (normalPrint) {
                             // Print feed to user
 
                             feed.prettyPrint();

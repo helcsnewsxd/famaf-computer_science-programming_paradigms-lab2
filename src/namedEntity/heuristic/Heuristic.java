@@ -4,15 +4,20 @@ import java.util.Map;
 import static java.util.Map.entry;
 
 import namedEntity.entities.NamedEntity;
-import namedEntity.entities_themes.CityInternational;
+import namedEntity.entities_themes.AddressCinema;
+import namedEntity.entities_themes.CityNational;
 import namedEntity.entities_themes.CompanyOtherThemes;
 import namedEntity.entities_themes.CountryInternational;
+import namedEntity.entities_themes.DateOtherThemes;
 import namedEntity.entities_themes.FirstnameMusic;
+import namedEntity.entities_themes.FirstnameOtherThemes;
 import namedEntity.entities_themes.LastnameCinema;
 import namedEntity.entities_themes.LastnameCulture;
 import namedEntity.entities_themes.LastnameFootball;
 import namedEntity.entities_themes.LastnameInternational;
+import namedEntity.entities_themes.LastnamePolitics;
 import namedEntity.entities_themes.LastnameTennis;
+import namedEntity.entities_themes.OtherEntityCinema;
 import namedEntity.entities_themes.OtherEntityNational;
 
 public abstract class Heuristic {
@@ -36,9 +41,18 @@ public abstract class Heuristic {
             entry("IBM", CompanyOtherThemes.class),
             entry("Tini", FirstnameMusic.class),
             entry("Tiktok", CompanyOtherThemes.class),
-            entry("Beijing", CityInternational.class),
-            entry("Washington", CityInternational.class),
-            entry("Taiwan", CountryInternational.class)
+            entry("Beijing", CityNational.class),
+            entry("Washington", CityNational.class),
+            entry("Taiwan", CountryInternational.class),
+            entry("Sam", FirstnameOtherThemes.class),
+            entry("Transformers", OtherEntityCinema.class),
+            entry("Texas", CityNational.class),
+            entry("Tesla", CompanyOtherThemes.class),
+            entry("Hollywood", AddressCinema.class),
+            entry("May", DateOtherThemes.class),
+            entry("Linda", FirstnameOtherThemes.class),
+            entry("China", CountryInternational.class),
+            entry("Yaccarino", LastnamePolitics.class)
             );
 
     public Class<? extends NamedEntity> getCategory(String entity) {
