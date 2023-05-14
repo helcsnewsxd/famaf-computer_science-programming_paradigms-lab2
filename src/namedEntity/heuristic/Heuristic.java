@@ -9,6 +9,7 @@ import namedEntity.entities_themes.CityNational;
 import namedEntity.entities_themes.CompanyOtherThemes;
 import namedEntity.entities_themes.CountryInternational;
 import namedEntity.entities_themes.DateOtherThemes;
+import namedEntity.entities_themes.FirstnameFootball;
 import namedEntity.entities_themes.FirstnameMusic;
 import namedEntity.entities_themes.FirstnameOtherThemes;
 import namedEntity.entities_themes.LastnameCinema;
@@ -29,6 +30,7 @@ public abstract class Heuristic {
             entry("Musk", LastnameCulture.class),
             entry("Biden", LastnameInternational.class),
             entry("Trump", LastnameInternational.class),
+            entry("Lionel", FirstnameFootball.class),
             entry("Messi", LastnameFootball.class),
             entry("Federer", LastnameTennis.class),
             entry("USA", CountryInternational.class),
