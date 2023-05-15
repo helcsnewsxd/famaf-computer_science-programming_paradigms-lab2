@@ -203,6 +203,59 @@ Las tareas a lograr fueron 4:
                     );
         ```
         
+# Punto Estrella
+
+El punto estrella que fue implementado fue el de desarrollar el parser para leer feeds de Reddit.
+
+La implementación de este parser se hizo sobre el módulo RedditParser.java, dentro de la clase con el mismo nombre se definió el método parse, que obtiene el contenido JSON obtenido de Reddit y guarda la información en un objeto Feed.
+
+Básicamente:
+
+- El método parse recibe la cadena del contenido. Éste contenido luego se leerá usando `reader` de tipo StringReader.
+- Se crean objetos JSONTokener y JSONObject como en el caso de RssParser para obtener la cadena de `reader` en un objeto JSON y poder ser descompuesta en tokens para la posterior extracción de información con getJSONObject y getJSONArray.
+- La variable `article` es la que contiene las partes que nos interesan del feed. Por eso, dentro del ciclo for, se obtienen los objetos JSON dentro del array y se extraen los campos deseados.
+- Esta información extraída luego se utiliza para crear un objeto Article y guardar ese artículo y los demás en un objeto Feed.
+- Este objeto Feed es el que se devuelve.
+
+```java
+public Feed parse(String content) throws EmptyFeedException {
+        // return null;
+        Feed feed = new Feed("Unnamed Feed");
+        StringReader reader = new StringReader(content);
+        JSONTokener tokener = new JSONTokener(reader);
+        JSONObject listing = new JSONObject(tokener);
+        JSONObject data = listing.getJSONObject("data");
+        JSONArray articles = data.getJSONArray("children"); // Contiene "artículos"
+
+        if(articles.length() == 0) {
+            throw new EmptyFeedException("Feed vacio");
+        } else {
+            JSONObject firstArticle = articles.getJSONObject(0).getJSONObject("data");
+            feed.setSiteName(firstArticle.getString("subreddit"));
+        }
+
+        for (int i = 0; i < articles.length(); i++) {
+            JSONObject article = articles.getJSONObject(i).getJSONObject("data"); // obtengo los objetos JSON de cada artículo
+
+						// Extraigo la información necesaria para crear un objeto Article
+            String title = article.getString("title");
+            Number timestamp = article.getNumber("created");
+            String text = article.getString("selftext");
+            String link = article.getString("url");
+
+            Date date = new Date(timestamp.longValue());
+
+						// Creo objeto Article
+            Article art = new Article(title, text, date, link);
+
+						// Agregamos artículo a feed, en donde tendremos todos los artículos extraídos.
+            feed.addArticle(art);
+        }
+
+        return feed;
+    }
+```
+        
 
 # Conclusiones
 
