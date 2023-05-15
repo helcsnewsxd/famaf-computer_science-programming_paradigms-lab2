@@ -203,6 +203,9 @@ Las tareas a lograr fueron 4:
                     );
         ```
         
+        Aquí hay una breve representación visual de cómo son las relaciones entre los objetos y clases.
+        ![Texto alternativo](clasesNamedEntity.png)
+        
 # Punto Estrella
 
 El punto estrella que fue implementado fue el de desarrollar el parser para leer feeds de Reddit.
