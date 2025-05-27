@@ -1,3 +1,8 @@
+> [!note]
+> This repository contains a feed reader with NER capabilities developed in Java as part of the Programming Paradigms course at FAMAF – Universidad Nacional de Córdoba.
+>
+> The code, documentation, and comments are in Spanish, as they were written for academic purposes and submission.
+
 # Lector de Feeds y detección de Named Entities en Java
 
 Integrantes:
